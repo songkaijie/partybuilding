@@ -1,0 +1,16 @@
+server: 
+  port: 3344 
+  
+spring:
+  application:
+    name:  party-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/zyjsa/winery-config-server.git
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:1111/eureka/

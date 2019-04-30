@@ -1,0 +1,91 @@
+spring:
+  profiles:
+    active: work
+
+# Server settings
+
+# Mmultipart settings
+multipart:
+  maxFileSize: 10Mb
+  maxRequestSize: 10Mb
+
+
+# File upload settings
+file-upload:
+  root-path: /home/seeyou/upload/
+  visa-path: visa/
+
+---
+
+# Spring settings
+spring:
+  profiles: dev
+
+  thymeleaf:
+    suffix: .html
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://101.201.66.95:3306/winery?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=10&testOnBorrow=true&validationQuery=select 1
+    username: winery
+    password: winery123
+    initialSize: 0
+    maxActive: 4
+    maxIdle: 4
+    minIdle: 4
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    maxWait: 60000
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+---
+
+# Spring settings
+spring:
+  profiles: work
+
+  thymeleaf:
+    suffix: .html
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.106.172.76:3306/party?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&maxReconnects=10
+    username: xindeqi
+    password: xindeqi123$
+    initialSize: 0
+    maxActive: 4
+    maxIdle: 4
+    minIdle: 4
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    maxWait: 60000
+
+  jpa:
+    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+
+  mvc:
+    formcontent:
+      putfilter:
+        enabled: false
+
+mybatis:
+  check-config-location: true
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath*:mappings/**/*.xml
+
+logging:
+  config: classpath:logback-spring.xml

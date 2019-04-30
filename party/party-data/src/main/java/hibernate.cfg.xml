@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://39.106.172.76:3306/party</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <mapping class="com.changfa.frame.data.entity.article.CmsArticleData"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsArticleHits"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsCategory"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsCategoryStyle"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsSubjectArticleData"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsSubjectArticleHits"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsSubjectStyle"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsSubject"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsArticle"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsSubjectArticle"/>
+        <mapping class="com.changfa.frame.data.entity.menu.Menu"/>
+        <mapping class="com.changfa.frame.data.entity.user.User"/>
+        <mapping class="com.changfa.frame.data.entity.user.UserInfo"/>
+        <mapping class="com.changfa.frame.data.entity.article.CmsArticleType"/>
+        <mapping class="com.changfa.frame.data.entity.user.UserArticleHistory"/>
+        <mapping class="com.changfa.frame.data.entity.user.PartyOrganization"/>
+        <mapping class="com.changfa.frame.data.entity.user.UserPartyRole"/>
+        <!--<property name="connection.url">jdbc:mysql://103.214.140.43:3306/chuangyetest</property>-->
+        <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+        <!-- DB schema will be updated if needed -->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+    </session-factory>
+</hibernate-configuration>
